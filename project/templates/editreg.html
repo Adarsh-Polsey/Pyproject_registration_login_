@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/myapp/editpost/" align="center">
+    {% csrf_token %}
+        <input type="hidden" name="id" value="{{ id }}">
+    <table border="1">
+        <tr>
+            <th>Name:</th>
+            <td><input type="text" name="name1" value="{{ data.name }}"></td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td><input type="email" name="email" value="{{ data.name }}"></td>
+        </tr>
+        <tr>
+            <th>Phone No.:</th>
+            <td><input type="number" name="number" value="{{ data.number }}"></td>
+        </tr>
+        <tr>
+            <th>Gender:</th>
+            <td>Male<input type="radio" name="gender" value="male" {% if data.gender == 'male' %} {% endif %}checked>
+                Female<input type="radio" name="Gender" value="female" {% if data.gender == 'female' %} {% endif %} checked>
+            </td>
+        </tr>
+        <tr>
+            <th>District:</th>
+            <td><select name="district" value="District">
+                <option value="Malappuram" {% if data.district == 'Malappuram' %} {% endif %}checked>Malappuram</option>
+                <option value="Kozhikode" {% if data.district == 'Kozhikode' %} {% endif %}checked>Kozhikode</option>
+                <option value="Thrissur" {% if data.district == 'Thrissur' %} {% endif %}checked>Thrissur</option>
+                <option value="Kannur" {% if data.district == 'Kannur' %} {% endif %}checked>Kannur</option>
+                <option value="Wayanad" {% if data.district == 'Wayanad' %} {% endif %}checked>Wayanad</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Password:</th>
+            <td><input type="password" name="password" value="{{ data.password }}"></td>
+        </tr>
+        <tr>
+            <th>Confirm pswrd:</th>
+            <td><input type="password" name="confirm" value="{{ data.cfrm_pswd }}"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

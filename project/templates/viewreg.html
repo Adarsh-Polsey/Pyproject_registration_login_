@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+
+        <tr>
+            {% for i in data %}
+
+            <th>Name:</th>
+            <td>{{i.name}}</td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td>{{i.email}}</td>
+        </tr>
+        <tr>
+            <th>Phone No.:</th>
+            <td>{{i.number}}</td>
+        </tr>
+        <tr>
+            <th>Gender:</th>
+            <td>{{i.gender}}</td>
+        </tr>
+        <tr>
+            <th>District:</th>
+            <td>{{i.district}}</td>
+        </tr>
+        <tr>
+            <th>Password:</th>
+            <td>{{i.password}}</td>
+        </tr>
+        <tr>
+            <th>Confirm pswrd:</th>
+            <td>{{i.cnfrm_pswd}}</td>
+
+        </tr>
+        <tr>
+            <td colspan="2"><a href="/myapp/editreg/{{ i.id }}">edit</a></td>
+        </tr>
+        <tr >
+           <td colspan="2"><a href="/myapp/deletereg/{{ i.id }}" onclick="return confirm('are you sure,you want to delete?')">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
