@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    <center>
+    <table border="1">
+    <tr>
+        <td>
+            Serial no.
+        </td>
+        <td>
+           Complaint:
+        </td>
+        <td>
+            date
+        </td>
+    </tr>{% for i in data %}
+    <tr>
+
+       <td>
+            {{ forloop.counter }}
+        </td>
+        <td>
+            {{ i.complaint }}
+        </td>
+        <td>
+            {{ i.date }}
+        </td>
+
+    </tr>{% endfor %}
+    </table></center>
+</form>
+</body>
+</html>
